@@ -10,7 +10,7 @@ This repository holds release files only. The app's source code is not here.
 **This is a test build.** It is not signed, and it has not yet been tested on a freshly installed PC. Expect rough
 edges.
 
-- File: `ConnectorHub-Setup-0.1.1-unsigned.exe` (149 MB), on the [Releases](../../releases) page
+- File: `ConnectorHub-Setup-0.1.1-unsigned.exe` (142 MB), on the [Releases](../../releases) page
 - SHA-256: `9699FFC8B8AD428A4707EE1DBA693F51B0460B271B4881DD4D8DBDCC49951727`
 
 Check the file in PowerShell before you run it. The hash it prints must match the one above:
