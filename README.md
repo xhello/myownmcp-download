@@ -1,23 +1,23 @@
-# Connector Hub downloads
+# My Own MCP downloads
 
-Installers for Connector Hub, a Windows app that keeps your knowledge on your own PC and lets you choose which AI apps
+Installers for My Own MCP, a Windows app that keeps your knowledge on your own PC and lets you choose which AI apps
 and people may use it. About the app: https://www.myownmcp.com
 
 This repository holds release files only. The app's source code is not here.
 
-## Latest: 0.1.2 signed test build
+## Latest: 0.1.3 signed test build
 
 **This is a test build.** It is signed, and so far it has been tried only on the developer's own PC. Expect rough
 edges, and install it only on a PC you test with.
 
-- File: `ConnectorHub-Setup-0.1.2.exe` (143 MB), on the [Releases](../../releases) page
-- SHA-256: `E2E604057DF7EA8EFD97816D81B4E36B87AE225106FDA4356928F907A9738A0D`
+- File: `MyOwnMCP-Setup-0.1.3.exe` (143 MB), on the [Releases](../../releases) page
+- SHA-256: `86ED157323D3CB977D44216C077907C83712A0BF404763CE414CB2C54816F725`
 - Signed by Wei Yuan, through Microsoft's Artifact Signing service
 
 Check the file in PowerShell before you run it. If your browser saved it in your Downloads folder, run this; the
 hash it prints must match the one above:
 
-    Get-FileHash "$HOME\Downloads\ConnectorHub-Setup-0.1.2.exe"
+    Get-FileHash "$HOME\Downloads\MyOwnMCP-Setup-0.1.3.exe"
 
 To check the signature, right-click the file, select Properties, then Digital Signatures, select Wei Yuan,
 then Details: Windows should say "This digital signature is OK."
@@ -32,7 +32,7 @@ then Details: Windows should say "This digital signature is OK."
 | 32-bit Windows, Windows 10 before version 22H2, Windows 8.1 and older | No |
 | Windows in S mode | No: S mode runs only apps from the Microsoft Store |
 
-The app and the installer are in English. Connector Hub installs for your Windows account only, so installing it needs
+The app and the installer are in English. My Own MCP installs for your Windows account only, so installing it needs
 no administrator rights. There is no Mac or Linux version. A Mac version is planned.
 
 ## What to expect when you install it
@@ -50,20 +50,23 @@ no administrator rights. There is no Mac or Linux version. A Mac version is plan
 
 ## After installing
 
-Connector Hub runs on your PC, and you use it in your browser. The first Google account that signs in becomes the
-hub's owner. MCP, the part that lets your own AI app, such as Claude, use your Memories (in testing; ChatGPT is being
+My Own MCP runs on your PC, and you use it in your browser. The first Google account that signs in becomes the
+hub's owner. For now Google's sign-in screen says "to continue to connector", from the app's earlier name, Connector
+Hub: that is this app. MCP, the part that lets your own AI app, such as Claude, use your Memories (in testing; ChatGPT is being
 confirmed), stays off until you turn it on in the app's MCP tab.
 
 ## Source code of open-source parts
 
-Some open-source parts of Connector Hub come under licenses that ask for their source code to be available. The
+Some open-source parts of My Own MCP come under licenses that ask for their source code to be available. The
 source of GNU libiconv and lxml is at https://www.myownmcp.com/source; THIRD-PARTY-NOTICES.txt, in the folder
-Connector Hub installs to, says where the rest is.
+My Own MCP installs to, says where the rest is.
 
 ## Licence
 
-Connector Hub is proprietary software. The installer shows its licence before you install.
+My Own MCP is proprietary software. The installer shows its licence before you install.
 
 ## Older builds
 
-0.1.1 was an unsigned test build. Use 0.1.2 instead.
+The app was called Connector Hub up to 0.1.2. 0.1.2 was its first signed test build and 0.1.1 an unsigned one. Use 0.1.3
+instead: it installs over either of them, stays in the folders it finds and is made to keep your data (tried over 0.1.2,
+on a PC with no Memories yet; not yet tried over 0.1.1).
