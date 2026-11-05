@@ -13,35 +13,41 @@ install it only on a PC you test with, as the installer itself says.
 - File: `ConnectorHub-Setup-0.1.1-unsigned.exe` (142 MB), on the [Releases](../../releases) page
 - SHA-256: `9699FFC8B8AD428A4707EE1DBA693F51B0460B271B4881DD4D8DBDCC49951727`
 
-Check the file in PowerShell before you run it. The hash it prints must match the one above:
+Check the file in PowerShell before you run it. If your browser saved it in your Downloads folder, run this; the
+hash it prints must match the one above:
 
-    Get-FileHash .\ConnectorHub-Setup-0.1.1-unsigned.exe
+    Get-FileHash "$HOME\Downloads\ConnectorHub-Setup-0.1.1-unsigned.exe"
 
 ## Which Windows versions
 
 | Windows | Works? |
 |---|---|
-| Windows 11, 64-bit (x64) | Made for it, but this test build hasn't been installed on any PC yet |
+| Windows 11 on an Intel or AMD PC (x64) | Made for it, but this test build hasn't been installed on any PC yet |
 | Windows 10 version 22H2, 64-bit (x64) | The installer accepts it, but it is not tested yet. Microsoft ended support for Windows 10 on 14 October 2025. |
 | Windows on ARM PCs | No: the installer refuses them |
 | 32-bit Windows, Windows 10 before version 22H2, Windows 8.1 and older | No |
 | Windows in S mode | No: S mode runs only apps from the Microsoft Store |
 
 The app and the installer are in English. Connector Hub installs for your Windows account only, so installing it needs
-no administrator rights. Mac and Linux versions don't exist yet.
+no administrator rights. There is no Mac or Linux version. A Mac version is planned.
 
 ## Installing an unsigned test build
 
-- Your browser may warn that the file isn't commonly downloaded. Keep it, then check its SHA-256 before you run
-  it, and delete it if it doesn't match.
+- Your browser may warn that the file isn't commonly downloaded (Chrome shows "Suspicious download blocked").
+  Keep it (in Chrome, choose Download suspicious file), then check its SHA-256 before you run it, and delete it
+  if it doesn't match.
 - Windows may show "Windows protected your PC". Select More info, then Run anyway.
-- If Smart App Control is on, Windows blocks this test build. Wait for the signed build.
+- New downloads get these two warnings until enough people have downloaded them, so the signed build will get
+  them at first too.
+- Because this build isn't signed, Windows blocks it if Smart App Control is on: wait for the signed build. If
+  Smart App Control says Evaluation, Windows may turn it on later, and it may then stop the installed test build
+  from starting.
 
 ## After installing
 
 Connector Hub runs on your PC, and you use it in your browser. The first Google account that signs in becomes the
-hub's owner. MCP, the part that lets Claude or ChatGPT use your Memories, stays off until you turn it on in the app's
-MCP tab.
+hub's owner. MCP, the part that lets your own AI app, such as Claude, use your Memories (in testing; ChatGPT is being
+confirmed), stays off until you turn it on in the app's MCP tab.
 
 ## Licence
 
