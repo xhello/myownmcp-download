@@ -5,24 +5,28 @@ and people may use it. About the app: https://www.myownmcp.com
 
 This repository holds release files only. The app's source code is not here.
 
-## Latest: 0.1.1 test build
+## Latest: 0.1.2 signed test build
 
-**This is a test build.** It is not signed, and it has not been installed on any PC yet. Expect rough edges, and
-install it only on a PC you test with, as the installer itself says.
+**This is a test build.** It is signed, and so far it has been tried only on the developer's own PC. Expect rough
+edges, and install it only on a PC you test with.
 
-- File: `ConnectorHub-Setup-0.1.1-unsigned.exe` (142 MB), on the [Releases](../../releases) page
-- SHA-256: `9699FFC8B8AD428A4707EE1DBA693F51B0460B271B4881DD4D8DBDCC49951727`
+- File: `ConnectorHub-Setup-0.1.2.exe` (143 MB), on the [Releases](../../releases) page
+- SHA-256: `E2E604057DF7EA8EFD97816D81B4E36B87AE225106FDA4356928F907A9738A0D`
+- Signed by Wei Yuan, through Microsoft's Artifact Signing service
 
 Check the file in PowerShell before you run it. If your browser saved it in your Downloads folder, run this; the
 hash it prints must match the one above:
 
-    Get-FileHash "$HOME\Downloads\ConnectorHub-Setup-0.1.1-unsigned.exe"
+    Get-FileHash "$HOME\Downloads\ConnectorHub-Setup-0.1.2.exe"
+
+To check the signature, right-click the file, select Properties, then Digital Signatures, select Wei Yuan,
+then Details: Windows should say "This digital signature is OK."
 
 ## Which Windows versions
 
 | Windows | Works? |
 |---|---|
-| Windows 11 on an Intel or AMD PC (x64) | Made for it, but this test build hasn't been installed on any PC yet |
+| Windows 11 on an Intel or AMD PC (x64) | Made for it. So far this test build has been tried only on the developer's own PC |
 | Windows 10 version 22H2, 64-bit (x64) | The installer accepts it, but it is not tested yet. Microsoft ended support for Windows 10 on 14 October 2025. |
 | Windows on ARM PCs | No: the installer refuses them |
 | 32-bit Windows, Windows 10 before version 22H2, Windows 8.1 and older | No |
@@ -31,17 +35,18 @@ hash it prints must match the one above:
 The app and the installer are in English. Connector Hub installs for your Windows account only, so installing it needs
 no administrator rights. There is no Mac or Linux version. A Mac version is planned.
 
-## Installing an unsigned test build
+## What to expect when you install it
 
 - Your browser may warn that the file isn't commonly downloaded (Chrome shows "Suspicious download blocked").
   Keep it (in Chrome, choose Download suspicious file), then check its SHA-256 before you run it, and delete it
   if it doesn't match.
-- Windows may show "Windows protected your PC". Select More info, then Run anyway.
-- New downloads get these two warnings until enough people have downloaded them, so the signed build will get
-  them at first too.
-- Because this build isn't signed, Windows blocks it if Smart App Control is on: wait for the signed build. If
-  Smart App Control says Evaluation, Windows may turn it on later, and it may then stop the installed test build
-  from starting.
+- Windows may show "Windows protected your PC". Select More info, check that the publisher is Wei Yuan, then
+  select Run anyway.
+- New downloads can get these two warnings until enough people have downloaded them, even when they're
+  signed.
+- When Microsoft's cloud service can't tell whether an app is safe, Smart App Control lets it run if it has
+  a valid signature, so it shouldn't block this signed build, but that isn't tried yet on a PC with Smart
+  App Control turned on.
 
 ## After installing
 
@@ -49,7 +54,16 @@ Connector Hub runs on your PC, and you use it in your browser. The first Google 
 hub's owner. MCP, the part that lets your own AI app, such as Claude, use your Memories (in testing; ChatGPT is being
 confirmed), stays off until you turn it on in the app's MCP tab.
 
+## Source code of open-source parts
+
+Some open-source parts of Connector Hub come under licenses that ask for their source code to be available. The
+source of GNU libiconv and lxml is at https://www.myownmcp.com/source; THIRD-PARTY-NOTICES.txt, in the folder
+Connector Hub installs to, says where the rest is.
+
 ## Licence
 
-Connector Hub is proprietary software. The installer shows its licence, which is still a draft for legal review
-and not in effect.
+Connector Hub is proprietary software. The installer shows its licence before you install.
+
+## Older builds
+
+0.1.1 was an unsigned test build. Use 0.1.2 instead.
